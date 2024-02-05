@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Fira+Code:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400&display=swap");
 
 /* src/App.css or your main CSS file */
 @import '~bootstrap/dist/css/bootstrap.min.css';
@@ -18,10 +19,27 @@ body {
   font-family: 'Arial', sans-serif;
 
   /* Set background color to black */
-  background-color: #000000;
+  /* background-color: #000000; */
+
+  background: url('./Assets/mash.jpg') no-repeat center center fixed;
+  background-size: cover;
+  /* opacity: 0.7; */
+  /* Adjust opacity as needed */
+  min-height: 100vh;
+
+  .environment {}
+
   /* Set text color to white */
 }
 
+
+
+.page-section {
+  margin-bottom: 20px;
+  margin-top: 40px;
+
+  /* Adjust the margin as needed */
+}
 
 
 .sidenav {
@@ -58,6 +76,7 @@ body {
 
 .app {
   display: flex;
+  flex-direction: column;
 }
 
 .sidenav {
@@ -195,6 +214,7 @@ section {
 
 h1,
 h2 {
+  margin-bottom: 0%;
   margin: 0;
   font-size: 2em;
   /* Adjust accordingly */
@@ -680,8 +700,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.5;
-  filter: blur(5px);
+
   background: url(https://unsplash.com/photos/a-close-up-of-a-persons-face-with-a-blurry-background-s4qtCUodkQ4) center no-repeat;
   background-size: cover;
 }
@@ -731,12 +750,104 @@ h3 {
 }
 
 
-/* /////////////////////////////////////////////////// COUNTDOWN ///////////////////////////////////////////////////// */
-.aboutus,
-.contactus {
-  background: #e0287d;
-  /* You can adjust the background color for AboutUs and ContactUs */
+/* /////////////////////////////////////////////////// ABOUTUS ///////////////////////////////////////////////////// */
+
+
+:root {
+  --color-white: #fafafa;
+  --color-off-white: #dfdfdf;
+  --color-gray: #808080;
+  --color-black: #000;
+  --font-copy: "Montserrat", sans-serif;
+  --font-title: "Anton", sans-serif;
 }
+
+
+
+
+.container {
+
+  padding: 0 5% 5% 5%;
+}
+
+.page-title {
+
+  /* margin-bottom: 2rem; */
+  font-family: var(--font-title);
+  font-size: 16rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 16rem;
+  color: var(--color-white);
+}
+
+.page-title {
+  margin-bottom: 5rem;
+  font-size: 5rem;
+  text-align: center;
+}
+
+
+/* 
+.content {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+height: 100%;
+} */
+
+.content__descriptor {
+  width: 14%;
+  /* border-top: 1px solid var(--color-gray); */
+  padding-top: 4rem;
+}
+
+.content__descriptor {
+  width: 100%;
+  padding: 2rem 0;
+  border-top: none;
+}
+
+.content__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.content__text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 2rem;
+  width: 50%;
+  border-top: 1px solid var(--color-gray);
+  border-bottom: 1px solid var(--color-gray);
+  margin-right: 10rem;
+  padding: 4rem 0;
+}
+
+.content__text-box {
+  margin-right: 0;
+}
+
+.content__text-box {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.content__text-box {
+  border-bottom: none;
+}
+
+.content__text {
+  width: 320px;
+}
+
+.content__text {
+  width: 100%;
+}
+
 
 /* ///////////////////////////////////////// contectus ////////////////////////////////////// */
 
@@ -747,7 +858,9 @@ h3 {
 
 .contact_us {
   background-color: #000000;
-  padding: 100px 80px;
+  padding: 0%;
+  background-size: cover;
+
 
 }
 
@@ -785,7 +898,7 @@ h3 {
 .contact_field .form-control {
   border-radius: 0px;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
 }
 
 .contact_field .form-control:focus {
@@ -861,7 +974,7 @@ button.contact_form_submit {
 }
 
 .map_sec {
-  padding: 20px 40px;
+  padding: 20px;
 }
 
 .map_inner h4,
@@ -879,3 +992,61 @@ button.contact_form_submit {
   border-radius: 30px;
   overflow: hidden;
 }
+
+
+/* /////////////////////////////////////////// EVENTS ////////////////////////////////////////////////// */
+
+
+
+.event-page-container {
+  /* background: url('./Assets/background_poster.jpg') no-repeat center center fixed; */
+  background-size: cover;
+  /* opacity: 0.7; */
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+}
+
+.event-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .btn-primary {
+    margin-top: 170px;
+  }
+}
+
+
+
+/* /////////////////////////////////////////// EVENTS ////////////////////////////////////////////////// */
+
+
+
+/* ///////////////////////////////////////////// TIMELINE ////////////////////////////////////////////////// */
+
+
+
+
+/* ///////////////////////////////////////////// TIMELINE ////////////////////////////////////////////////// */
