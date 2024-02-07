@@ -2,42 +2,22 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faHandshake, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const Nevbar = () => {
-    const scrollToHome = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    const scrollToAbout = () => {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const scrollToSponsors = () => {
-        const sponsorSection = document.getElementById('sponsors');
-        if (sponsorSection) {
-            sponsorSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const scrollToContact = () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            if (contactSection === 'contact') {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            } else {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
+function Nevbar() {
+    const scrollTo = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            const topOffset = section.offsetTop; // Get the top offset of the section
+            window.scrollTo({ top: topOffset, behavior: 'smooth' });
         }
     };
 
     return (
         <div className="floating-icons">
-            <div onClick={() => scrollToHome()}><FontAwesomeIcon icon={faHome} /></div>
-            <div onClick={() => scrollToAbout()}><FontAwesomeIcon icon={faUsers} /></div>
-            <div onClick={() => scrollToSponsors()}><FontAwesomeIcon icon={faHandshake} /></div>
-            <div onClick={() => scrollToContact()}><FontAwesomeIcon icon={faEnvelope} /></div>
+            <div onClick={() => scrollTo('home')}><FontAwesomeIcon icon={faHome} /></div>
+            <div onClick={() => scrollTo('about')}><FontAwesomeIcon icon={faUsers} /></div>
+            <div onClick={() => scrollTo('events')}><FontAwesomeIcon icon={faUsers} /></div>
+            <div onClick={() => scrollTo('sponsors')}><FontAwesomeIcon icon={faHandshake} /></div>
+            <div onClick={() => scrollTo('contact')}><FontAwesomeIcon icon={faEnvelope} /></div>
         </div>
     );
 };

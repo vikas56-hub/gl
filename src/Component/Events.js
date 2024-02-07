@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from 'react-bootstrap';
 import '../App.css';
-import '../style.scss';
+
 
 function Events() {
     return (
@@ -10,7 +10,7 @@ function Events() {
             <div className="event-page-container">
                 <div className="event-cards">
                     <Card className="event-card">
-                        <Card.Img variant="top" alt="poster" src="ctf_poster.jpg" />
+                        <Card.Img variant="top" alt="poster" src="2.jpg" />
                         <Card.Body>
                             <Card.Title>CTF</Card.Title>
                             <Card.Text>
@@ -43,7 +43,7 @@ function Events() {
                     </Card>
 
                     <Card className="event-card">
-                        <Card.Img variant="top" alt="poster" src="micromousemaze_poster.jpg" />
+                        <Card.Img variant="top" alt="poster" src="1.jpg" />
                         <Card.Body>
                             <Card.Title>MicroMouse Maze</Card.Title>
                             <Card.Text>

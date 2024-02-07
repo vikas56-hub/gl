@@ -6,7 +6,7 @@ import Sponsors from './Component/Sponsors';
 import ContactUs from './Component/ContactUs';
 import sulogo from './Assets/sulogo.png';
 import './App.css';
-import './style.scss';
+// import './style.scss';
 
 function App() {
   return (
@@ -18,23 +18,30 @@ function App() {
             <img src={sulogo} alt="Logo" height={40} width={70} />
           </a>
         </div>
-        <div className='home'>
+        <div className='home' id='home'>
           <div className='main'>
             <div className="hero-container">
               {/* </div> */}
               <h1 className="hero glitch layers" data-text="glitch"><span>GLITCH</span></h1>
               <br />
-              <h3><span><b>UNLEASHING THE INNOVATION</b></span></h3>
+              <h3 className='subtitle'><span><b>UNLEASHING THE INNOVATION</b></span></h3>
             </div>
-            <div><h2>yooo</h2></div>
             <div className='timer'><Timer /></div>
           </div>
         </div>
         <Nevbar />
-        <div className='components'><AboutUs /></div>
-        <div className='components'><Sponsors /></div>
-        <div className='components'><Events /></div>
-        <div className='components'><ContactUs /></div>
+        <div className='components' id='about'>
+          <AboutUs />
+        </div>
+        <div className='components' id='events'>
+          <Events />
+        </div>
+        <div className='components' id='sponsors'>
+          <Sponsors />
+        </div>
+        <div className='components' id='contact'>
+          <ContactUs />
+        </div>
 
       </div>
     </div>

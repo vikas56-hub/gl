@@ -21,7 +21,7 @@ body {
   /* Set background color to black */
   /* background-color: #000000; */
 
-  background: url('./Assets/mash.jpg') no-repeat center center fixed;
+  background: url('./Assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
   /* opacity: 0.7; */
   /* Adjust opacity as needed */
@@ -79,6 +79,8 @@ body {
   flex-direction: column;
 }
 
+/* //////////////////////////////////////  NEVBAR ////////////////////////////////////////// */
+
 .sidenav {
   display: flex;
   flex-direction: column;
@@ -104,7 +106,6 @@ section {
   margin-bottom: 40px;
 }
 
-/* //////////////////////////////////////  NEVBAR ////////////////////////////////////////// */
 
 .floating-icons {
   position: fixed;
@@ -118,15 +119,17 @@ section {
 }
 
 .floating-icons div {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  /* Increase button width */
+  height: 40px;
+  /* Increase button height */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  /* Increase margin between buttons */
   background-color: #111111;
   color: white;
-  padding: 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -136,38 +139,11 @@ section {
   background-color: #333333;
 }
 
-.floating-icons div:hover {
-  background-color: #333333;
-}
-
-.floating-icons-right {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1000;
-}
-
-.floating-icons-right div {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  background-color: #111111;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.floating-icons-right div:hover {
-  background-color: #333333;
+@media only screen and (max-width: 768px) {
+  .floating-icons {
+    left: auto;
+    right: 10px;
+  }
 }
 
 
@@ -186,13 +162,29 @@ section {
   align-items: center;
 }
 
-
 .home {
   text-align: center;
-  height: 900px;
+  height: 100vh;
+  /* Adjust height to fill the viewport */
   width: 100%;
   /* background-color: rgb(0, 0, 0); */
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 20px;
+    /* Add padding for smaller screens */
+  }
+
+  /* Adjust hero text size for smaller screens */
+  .hero {
+    font-size: 2.5rem;
+    /* Adjust font size for smaller screens */
+  }
 }
 
 .main {
@@ -220,24 +212,39 @@ h2 {
   /* Adjust accordingly */
 }
 
+/* Adjust accordingly */
+/* Adjust accordingly */
+
 h3 {
-  letter-spacing: 0.2em;
+  /*
   color: #ffffff;
-  /* Adjust accordingly */
-  font-size: 1.5em;
-  /* Adjust accordingly */
+  font-size: 1.5em; */
+}
+
+.subtitle {
+  letter-spacing: 0.2em;
+  font-size: clamp(24px, 2vw, 32px);
+  /* Responsive font size using vw unit */
+  color: #ffffff;
+  /* font-weight: bold; */
+}
+
+.hero-container {
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
 }
 
 .hero {
   font-family: 'Archivo', sans-serif;
   font-size: clamp(120px, 10vw, 160px);
+  /* Responsive font size using vw unit */
   line-height: 1;
   display: inline-block;
   color: #ffffff;
   z-index: 2;
   letter-spacing: 20px;
   padding-bottom: 20px;
-
   /* Bright things in dark environments usually cast that light, giving off a glow */
   filter: drop-shadow(0 1px 3px);
 }
@@ -688,10 +695,18 @@ h3 {
     font 7s step-end infinite, movement 8s step-end infinite;
 }
 
-.hero-container {
-  position: relative;
-  padding: 100px 0;
-  text-align: center;
+@media screen and (max-width: 768px) {
+  .hero {
+    font-size: clamp(60px, 7vw, 100px);
+    /* Adjust font size for smaller screens */
+    letter-spacing: 10px;
+    /* Adjust letter spacing for smaller screens */
+  }
+
+  .subtitle {
+    font-size: clamp(18px, 2vw, 24px);
+    /* Adjust font size for smaller screens */
+  }
 }
 
 .environment {
@@ -767,7 +782,7 @@ h3 {
 
 .container {
 
-  padding: 0 5% 5% 5%;
+  /* padding: 0 5% 5% 5%; */
 }
 
 .page-title {
@@ -789,64 +804,69 @@ h3 {
 }
 
 
-/* 
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.page-title {
+  margin-bottom: 6rem;
+  font-size: 3.2rem;
+  text-align: center;
+  color: #333;
+}
+
 .content {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-height: 100%;
-} */
-
-.content__descriptor {
-  width: 14%;
-  /* border-top: 1px solid var(--color-gray); */
-  padding-top: 4rem;
-}
-
-.content__descriptor {
-  width: 100%;
-  padding: 2rem 0;
-  border-top: none;
-}
-
-.content__title {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-.content__text-box {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: 2rem;
-  width: 50%;
-  border-top: 1px solid var(--color-gray);
-  border-bottom: 1px solid var(--color-gray);
-  margin-right: 10rem;
-  padding: 4rem 0;
+  /* Change flex direction to column for small screens */
 }
 
+.content__descriptor,
 .content__text-box {
+  flex: 1;
+  margin-bottom: 3rem;
+  /* Add some margin between sections */
+}
+
+.content__descriptor {
+  border-right: none;
+  /* Remove border on small screens */
+  padding-right: 0;
+  /* Remove padding on small screens */
   margin-right: 0;
+  /* Remove margin on small screens */
 }
 
 .content__text-box {
-  width: 100%;
-  padding: 2rem 0;
-}
-
-.content__text-box {
-  border-bottom: none;
+  padding-left: 0;
+  /* Remove padding on small screens */
 }
 
 .content__text {
-  width: 320px;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1.8rem;
 }
 
-.content__text {
-  width: 100%;
+@media only screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    /* Revert flex direction to row for larger screens */
+  }
+
+  .content__descriptor {
+    border-right: 1px solid #000000;
+    padding-right: 3rem;
+    margin-right: 3rem;
+  }
+
+  .content__text-box {
+    padding-left: 3rem;
+  }
 }
+
 
 
 /* ///////////////////////////////////////// contectus ////////////////////////////////////// */
@@ -995,14 +1015,9 @@ button.contact_form_submit {
 
 
 /* /////////////////////////////////////////// EVENTS ////////////////////////////////////////////////// */
-
-
-
 .event-page-container {
   /* background: url('./Assets/background_poster.jpg') no-repeat center center fixed; */
   background-size: cover;
-  /* opacity: 0.7; */
-
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1020,9 +1035,21 @@ button.contact_form_submit {
   width: 300px;
   height: 400px;
   margin: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Adjust the opacity here */
   border-radius: 10px;
   color: rgb(255, 255, 255);
+  transition: box-shadow 0.3s, background-color 0.3s;
+  /* Add transition for smoother effect */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  /* Add slight shadow */
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Adjust the hover opacity here */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    /* Increase shadow on hover */
+  }
 
   .card-img-top {
     border-top-left-radius: 10px;
@@ -1037,8 +1064,6 @@ button.contact_form_submit {
     margin-top: 170px;
   }
 }
-
-
 
 /* /////////////////////////////////////////// EVENTS ////////////////////////////////////////////////// */
 

@@ -30,28 +30,23 @@ function Timer() {
 
     return (
         <div className='timer row justify-content-center'>
-            <div className='timer'>
-                <div>
-                    <p>{timeLeft.days.toString().padStart(2, '0')}</p>
-                    <h2><span>Days</span></h2>
-                </div>
-                <div>
-                    <p>{timeLeft.hours.toString().padStart(2, '0')}</p>
-                    <h2><span>Hours</span></h2>
-                </div>
-                <div>
-                    <p>{timeLeft.minutes.toString().padStart(2, '0')}</p>
-                    <h2><span>Minutes</span></h2>
-                </div>
-                <div>
-                    <p>{timeLeft.seconds.toString().padStart(2, '0')}</p>
-                    <h2><span>Seconds</span></h2>
-                </div>
+            <div className='col-12 col-md-3 text-center  p-3'>
+                <p className='display-4'>{timeLeft.days.toString().padStart(2, '0')}</p>
+                <h2 className='h4'><span>Days</span></h2>
+            </div>
+            <div className='col-12 col-md-3 text-center  p-3'>
+                <p className='display-4'>{timeLeft.hours.toString().padStart(2, '0')}</p>
+                <h2 className='h4'><span>Hours</span></h2>
+            </div>
+            <div className='col-12 col-md-3 text-center p-3'>
+                <p className='display-4'>{timeLeft.minutes.toString().padStart(2, '0')}</p>
+                <h2 className='h4'><span>Minutes</span></h2>
+            </div>
+            <div className='col-12 col-md-3 text-center p-3'>
+                <p className='display-4'>{timeLeft.seconds.toString().padStart(2, '0')}</p>
+                <h2 className='h4'><span>Seconds</span></h2>
             </div>
         </div>
-
-
-
 
 
 
